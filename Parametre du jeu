@@ -1,0 +1,23 @@
+void afficherParametres() {
+    // Calcul pour centrer le texte
+    int largeurEcran = 90; // Largeur fictive de l'écran pour centrer le texte
+    char *parametres[] = {
+        "PARAMETRES DU JEU",
+        "1. Taille du tableau : 3x3",
+        "2. Symbole Joueur 1 : X",
+        "3. Symbole Joueur 2 : O",
+        "4. Retour au Menu Principal"
+    };
+    int nombreLignes = sizeof(parametres) / sizeof(parametres[0]);
+
+    printf("\n========================================"
+           "========================================"
+           "==========\n");
+    for (int i = 0; i < nombreLignes; i++) {
+        printf("%*s\n", (largeurEcran + strlen(parametres[i])) / 2, parametres[i]);
+    }
+    printf("========================================"
+           "========================================"
+           "==========\n");
+
+}
