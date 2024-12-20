@@ -1,0 +1,28 @@
+void regles_du_Jeu() {
+    // Calcul pour centrer le texte
+    int largeurEcran = 90; // Largeur fictive de l'écran pour centrer le texte
+    char *regle[] = {
+        "1. Le but: ",
+        "Le but du jeu est d'aligner avant son adversaire 3 symboles identiques",
+        "horizontalement,verticalement ou en diagonale.",
+        "chaque joueur a donc son propre symbole, ",
+        "le Joueur1 a une croix et le Joueur2 a un rond.\n",
+        "2. Fin de partie:",
+        "Le premier joueur a aligner 3 symboles identiques gagne la partie et marque 1 point.",
+        "Si la grille est completee sans vainqueur, la partie est finie et il y a egalite.\n",
+        "3. Retour au Menu Principal",
+
+    };
+    int nombreLignes = sizeof(regle) / sizeof(regle[0]);
+
+    printf("\n========================================"
+           "========================================"
+           "==========\n");
+    for (int i = 0; i < nombreLignes; i++) {
+        printf("%*s\n", (largeurEcran + strlen(regle[i])) / 2, regle[i]);
+    }
+    printf("========================================"
+           "========================================"
+           "==========\n");
+
+}
