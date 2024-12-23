@@ -1,0 +1,5 @@
+void afficherMenuOptions() {
+    printf("\n=== Menu Options ===\n");
+    printf("1. Modifier la couleur des pions\n");
+    printf("2. Revenir au menu principal\n");
+    printf("=====================\n");
