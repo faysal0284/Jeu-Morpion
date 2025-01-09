@@ -1,0 +1,80 @@
+void AfficherMenu()
+{
+    printf("================================\n");
+    printf("         MENU PRINCIPAL\n");
+    printf("================================\n\n");
+    printf("1. Lancer une partie\n");
+    printf("2. Charger une partie\n");
+    printf("3. Aide\n");
+    printf("4. Statistiques\n");
+    printf("5. Quitter\n\n");
+    printf("================================\n");
+    printf("Votre choix : ");
+}
+=================================================================================
+void AfficherChoixPartie()
+{
+    printf("================================\n");
+    printf("         CHOIX PARTIE\n");
+    printf("================================\n\n");
+    printf("1. J1 vs J2\n");
+    printf("2. J1 contre IA\n\n");
+    printf("r. Menu Principal\n\n");
+    printf("================================\n");
+    printf("Votre choix : ");
+
+    char choixPartie;
+    scanf("%c", &choixPartie);
+    NettoyerTampon();
+
+    switch(choixPartie)
+    {
+    case '1':
+        system("cls");
+        printf("Mode J1 vs J2 sélectionné. (fonction à implémenter)\n");
+        RetourMenu();
+        break;
+    case '2':
+        system("cls");
+        printf("Mode J1 contre IA sélectionné. (fonction à implémenter)\n");
+        RetourMenu();
+        break;
+    case 'r':
+        system("cls");
+        return;
+    default:
+        system("cls");
+        printf("Choix invalide. Retour au menu principal.\n");
+        RetourMenu();
+        break;
+    }
+}
+=================================================================================
+void AfficherAide()
+{
+    printf("===============================\n");
+    printf("            AIDE               \n");
+    printf("===============================\n");
+    printf("Le jeu de morpion se joue sur un plateau de 3x3 cases.\n");
+    printf("Deux joueurs s'affrontent en prenant chacun un symbole :\n");
+    printf("- Les joueurs utilisent les pions ( LETTRES MAJUSCULES ) qu'ils ont choisi.\n");
+    printf("\n");
+    printf("Objectif :\n");
+    printf("Alignez trois symboles identiques (horizontalement, verticalement ou en diagonale).\n");
+    printf("\n");
+    printf("Pour jouer :\n");
+    printf("1. Selectionnez une case en entrant un numero (1 a 9).\n");
+    printf("   Les cases sont numerotees comme suit :\n\n");
+    printf("                1 | 2 | 3\n");
+    printf("               ---|---|---\n");
+    printf("                4 | 5 | 6\n");
+    printf("               ---|---|---\n");
+    printf("                7 | 8 | 9\n\n");
+    printf("2. Chaque joueur joue a tour de role.\n");
+    printf("3. Le premier joueur a aligner trois symboles gagne.\n");
+    printf("4. Si toutes les cases sont remplies sans alignement, la partie est nulle.\n");
+    printf("\n");
+    printf("===============================\n");
+    RetourMenu(); // Attend une entrée utilisateur pour revenir au menu.
+}
+=================================================================================
