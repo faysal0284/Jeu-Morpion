@@ -1,0 +1,59 @@
+void ChoixMenu()
+{
+    int choix;
+    if (scanf("%d", &choix) != 1) // Vérifie si l'entrée est valide
+    {
+        NettoyerTampon();
+        printf("\nChoix invalide. Veuillez entrer un numéro.\n");
+        RetourMenu();
+        return;
+    }
+
+    switch (choix)
+    {
+    case 1:
+        system("cls");
+        AfficherChoixPartie();
+        break;
+    case 2:
+        system("cls");
+        printf("Chargement de la partie (fonction a implementer).\n");
+        break;
+    case 3:
+        system("cls");
+        AfficherAide();
+        break;
+    case 4:
+        system("cls");
+        printf("STATS");
+        /*Afficherstats();*/
+        break;
+    case 5:
+        system("cls");
+        printf("A bientot !\n");
+        exit(0); // Quitte le programme proprement
+    default:
+        printf("Choix invalide. Veuillez reessayer.\n");
+        break;
+    }
+}
+================================================================================
+A CORRIGER
+void RetourMenu() 
+{
+    printf("\nAppuyez sur une touche pour revenir au menu principal...");
+    char boutonretour;
+    scanf("%c", &boutonretour);
+    if (boutonretour = 'r')
+    {
+        AfficherMenu();
+        ChoixMenu();
+    }
+}
+===============================================================================
+void NettoyerTampon()
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
