@@ -1,7 +1,7 @@
 void ChoixMenu()
 {
     int choix;
-    if (scanf("%d", &choix) != 1) // Vérifie si l'entrée est valide
+    if (scanf(" %d", &choix) != 1) // Vérifie si l'entrée est valide
     {
         NettoyerTampon();
         printf("\nChoix invalide. Veuillez entrer un numéro.\n");
@@ -25,10 +25,15 @@ void ChoixMenu()
         break;
     case 4:
         system("cls");
-        printf("STATS");
+        printf("OPTIONS");
         /*Afficherstats();*/
         break;
     case 5:
+        system("cls");
+        printf("STATS");
+        /*Afficherstats();*/
+        break;
+    case 6:
         system("cls");
         printf("A bientot !\n");
         exit(0); // Quitte le programme proprement
@@ -38,17 +43,14 @@ void ChoixMenu()
     }
 }
 ================================================================================
-A CORRIGER
-void RetourMenu() 
+void RetourMenu()
 {
     printf("\nAppuyez sur une touche pour revenir au menu principal...");
-    char boutonretour;
-    scanf("%c", &boutonretour);
-    if (boutonretour = 'r')
-    {
-        AfficherMenu();
-        ChoixMenu();
-    }
+    NettoyerTampon(); // Nettoie avant la saisie pour éviter les résidus
+    getchar(); // Attend une touche (simple saisie utilisateur)
+    system("cls"); // Efface l'écran pour rendre l'affichage propre
+    AfficherMenu(); // Réaffiche le menu principal
+    ChoixMenu(); // Permet un nouveau choix
 }
 ===============================================================================
 void NettoyerTampon()
@@ -56,4 +58,9 @@ void NettoyerTampon()
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
-
+===============================================================================
+void Menu()
+{
+    AfficherMenu();
+    ChoixMenu();
+}
