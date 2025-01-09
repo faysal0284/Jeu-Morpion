@@ -1,22 +1,24 @@
 void AfficherMenu()
 {
-    printf("================================\n");
-    printf("         MENU PRINCIPAL\n");
-    printf("================================\n\n");
-    printf("1. Lancer une partie\n");
-    printf("2. Charger une partie\n");
-    printf("3. Aide\n");
-    printf("4. Statistiques\n");
-    printf("5. Quitter\n\n");
+    printf("====================================================================================================================================================\n");
+    printf("                                                                 MENU PRINCIPAL\n");
+    printf("====================================================================================================================================================\n\n");
+    printf("1. Nouvelle partie\n");
+    printf("2. Charger derniere partie\n");
+    printf("3. Aide et regles du Jeu\n");
+    printf("4. Options\n");
+    printf("5. Statistiques\n");
+    printf("6. Quitter le jeu\n\n");
     printf("================================\n");
     printf("Votre choix : ");
 }
+
 =================================================================================
 void AfficherChoixPartie()
 {
-    printf("================================\n");
-    printf("         CHOIX PARTIE\n");
-    printf("================================\n\n");
+    printf("====================================================================================================================================================\n");
+    printf("                                                                    CHOIX PARTIE\n");
+    printf("====================================================================================================================================================\n\n");
     printf("1. J1 vs J2\n");
     printf("2. J1 contre IA\n\n");
     printf("r. Menu Principal\n\n");
@@ -24,24 +26,24 @@ void AfficherChoixPartie()
     printf("Votre choix : ");
 
     char choixPartie;
-    scanf("%c", &choixPartie);
+    scanf(" %c", &choixPartie);
     NettoyerTampon();
 
     switch(choixPartie)
     {
     case '1':
         system("cls");
-        printf("Mode J1 vs J2 sélectionné. (fonction à implémenter)\n");
+        printf("Mode J1 vs J2 selectionne. (fonction à implementer)\n");
         RetourMenu();
         break;
     case '2':
         system("cls");
-        printf("Mode J1 contre IA sélectionné. (fonction à implémenter)\n");
+        printf("Mode J1 contre IA selectionne. (fonction à implémenter)\n");
         RetourMenu();
         break;
     case 'r':
         system("cls");
-        return;
+        Menu();
     default:
         system("cls");
         printf("Choix invalide. Retour au menu principal.\n");
@@ -77,4 +79,5 @@ void AfficherAide()
     printf("===============================\n");
     RetourMenu(); // Attend une entrée utilisateur pour revenir au menu.
 }
+
 =================================================================================
